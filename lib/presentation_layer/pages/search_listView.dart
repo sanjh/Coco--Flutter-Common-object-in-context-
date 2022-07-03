@@ -55,6 +55,10 @@ class SearchListView extends SearchDelegate {
           onTap: () {
             Navigator.of(context).pop(searchResult[index]);
           },
+          trailing: Icon(
+            Icons.arrow_forward_ios,
+            size: 15,
+          ),
         );
       },
       separatorBuilder: (context, index) {
