@@ -39,7 +39,7 @@ class SearchListView extends SearchDelegate {
         .where((element) => element.contains(query) || query.contains(element))
         .toList();
 
-    return ListView.builder(
+    return ListView.separated(
       itemCount: searchResult.length,
       itemBuilder: (ctx, index) {
         return ListTile(
@@ -56,6 +56,9 @@ class SearchListView extends SearchDelegate {
             Navigator.of(context).pop(searchResult[index]);
           },
         );
+      },
+      separatorBuilder: (context, index) {
+        return Divider();
       },
     );
   }
